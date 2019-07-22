@@ -1,0 +1,73 @@
+
+cd /var/www/html/ziva
+
+-------------- *Crear usuario Magento* --------------
+
+sudo useradd pana
+passwd pana → aliasjj21
+usermod -a -G apache pana
+usermod -g daemon pana
+
+******************** *PERMISOS* *******************
+
+                    ** MYSQL **
+Ejecutar en /
+chown -R mysql:mysql /etc/mysql
+chown -R mysql:mysql /var/lib
+chown -R mysql:mysql /var/lib/mysql
+
+find . -type d -exec chmod 755 {} \; && find . -type f -exec chmod 644 {} \; && chmod u+x bin/magento
+
+chown -R pana:daemon /var/www/html/ziva
+
+cd /var/www/html/ziva/var
+chown pana:daemon -R generation/ log/ page_cache/ cache/
+cd ../
+chown pana:daemon -R vendor/
+
+chmod -R 777 var pub
+
+------------ **** Classics **** -------------
+
+-- ** Borrar cache ** --
+rm -rf var/di/* pub/static/_cache/* pub/static/frontend/* var/generation/* var/cache/* var/page_cache/* var/view_preprocessed/* /vendor/*
+rm -rf var/page_cache var/cache var/composer_home var/generation var/di var/view_preprocessed
+
+chmod -R 777 var pub
+
+php bin/magento setup:upgrade && php -dmemory_limit=5G bin/magento setup:di:compile
+
+php bin/magento setup:static-content:deploy es_ES
+
+php bin/magento indexer:reindex && php bin/magento cache:flush
+
+php bin/magento indexer:reindex
+php bin/magento cache:clean
+php bin/magento cache:flush
+php bin/magento cache:status
+
+-------------------------------------------------
+
+VERSION
+php bin/magento --version
+
+ADMIN URL
+php bin/magento info:adminuri
+
+php bin/magento config:sensitive:set web/secure/base_url https://example.com/
+
+php bin/magento config:sensitive:set web/secure/base_link_url https://example.com
+
+php bin/magento config:set web/secure/use_in_adminhtml 1
+
+php bin/magento cache:clean
+
+------------------------------------------------
+
+Modes:
+/opt/lampp/bin/php bin/magento module:status
+/opt/lampp/bin/php bin/magento maintenance:enable
+/opt/lampp/bin/php bin/magento maintenance:disable
+/opt/lampp/bin/php bin/magento deploy:mode:show
+/opt/lampp/bin/php bin/magento deploy:mode:set developer
+/opt/lampp/bin/php bin/magento deploy:mode:set production

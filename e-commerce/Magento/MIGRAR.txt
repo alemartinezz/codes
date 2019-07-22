@@ -1,0 +1,51 @@
+LOCAL a WEB
+
+- Exportar BD
+Borrar comentarios
+Agregar al principio: SET FOREIGN_KEY_CHECKS = 0;
+Agregar al final: SET FOREIGN_KEY_CHECKS = 1;
+
+- Comprimir magento
+cd /
+zip -r ziva.zip /var/www/html/ziva
+mv ./ziva.zip /media/sf_xtdocs/ziva
+
+- Subir magento al servidor
+
+- Configurar app/etc/env.php
+        'host' => 'ziva.com.uy',
+        'dbname' => 'ziva',
+        'username' => 'ziva_chapo',
+        'password' => '=p}UuCF&g]f^',
+        'active' => '1',
+
+- BD
+Borrar BD actual
+Crear base de datos ziva
+Crear usuario
+añadir usuario a bd
+Importar SQL
+
+- core_config_data
+	web/unsecure/base_url = https://ziva.com.uy
+	web/secure/base_url = https://ziva.com.uy
+
+Por comando:
+/opt/lampp/bin/php bin/magento setup:store-config:set --base-url=https://127.0.0.1/ziva
+/opt/lampp/bin/php bin/magento setup:store-config:set --base-url-secure=https://127.0.0.1/ziva
+
+
+
+WEB A LOCAL
+	
+- Configurar env.php
+	'host' => 'localhost',
+        'dbname' => 'ziva',
+        'username' => 'root',
+        'password' => '',
+        'active' => '1',
+		
+core_config_data:
+	web/unsecure/base_url = https://localhost
+	web/secure/base_url = https://localhost
+

@@ -1,0 +1,7 @@
+composer require magento/product-community-edition 2.1.12 --no-update
+composer update
+rm -rf var/di var/generation
+php bin/magento cache:flush
+php bin/magento setup:upgrade
+php bin/magento indexer:reindex
+chmod -R 777 var

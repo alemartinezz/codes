@@ -1,0 +1,7 @@
+Bajar lampp
+Copiar magento al servidor
+Permisos a las carpetas
+Editar php.ini memory_limit=-1 max_input_time -1 post_max_size -1
+Imoprtar BD
+Editar di.xml
+Editar app/etc/env.php

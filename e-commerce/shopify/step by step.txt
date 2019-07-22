@@ -1,0 +1,35 @@
+﻿-> Elegir Tema
+
+-> Logo
+
+-> Portada
+
+-> Primer producto
+
+-> Registrar en Google
+
+-> Agregar Google Analytics
+
+-> Traducir
+
+-> Apps
+Product reviews
+Social Sharing Buttons (SSB) by developer ZotaBox
+Kit by Kit CRM (facebook ads)
+
+-> Settings
+Checkout -> Abandoned checkout
+Payment Providers -> Accept Credit Card Payments
+Shipping -> Edit -> Agregar método de envio
+
+-> Crear pàginas
+Refund Policy
+Privacy Policy
+Terms of service
+About Us
+Contact
+
+-> Instagram Shop by Snapppt
+-> Facebook store
+
+-> Íconos de redes sociales
