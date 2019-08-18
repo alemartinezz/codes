@@ -1,5 +1,0 @@
-Email:
-->Stores->Configuration->General->Store Email Adresses
-- General Contact
-- Customer Support
-- Content->Configuration->Transactional Emails

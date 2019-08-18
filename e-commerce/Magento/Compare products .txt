@@ -1,5 +1,0 @@
-"C:\xampp\htdocs\ziva\vendor\magento\module-catalog\view\frontend\layout\default.xml"
-
-
-    <referenceBlock name="catalog.compare.sidebar" remove="true"/>
-    <referenceBlock name="view.addto.compare" remove="true" />

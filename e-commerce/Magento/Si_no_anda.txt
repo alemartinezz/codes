@@ -1,6 +1,0 @@
-Chequear env.php
-Chequear secure_url en core_config data phpmyadmin
-Asignar usuario a carpeta (como root)
-Asignar permisos a carpetas y archivos (como root)
-Hacer upgrade-compile-deploy-cache (como usuario de magento)
-Felicidad

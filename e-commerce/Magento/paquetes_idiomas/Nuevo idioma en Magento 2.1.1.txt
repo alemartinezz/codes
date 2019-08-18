@@ -1,6 +1,0 @@
-- Crear carpetas en APP: i18n/theme/idioma (es_ES)
-- php bin/magento cache:flush
-- php bin/magento setup:upgrade
-- php bin/magento setup:static-content:deploy es_ES
-- Borrar VAR
-- php bin/magento setup:di:compile
