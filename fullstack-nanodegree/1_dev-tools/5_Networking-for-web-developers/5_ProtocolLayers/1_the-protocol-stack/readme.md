@@ -1,2 +1,0 @@
-# The protocol stack
-
